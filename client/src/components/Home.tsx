@@ -1,5 +1,9 @@
 import { useState } from "react";
-// import ProductList from './Productlist'; 
+import ProductList from './Productlist'; 
+import Login from './Login'; 
+import Cart from './Cart'; 
+
+
 
 
 function Home() {
@@ -40,7 +44,9 @@ function Home() {
 
   return (
     <div>
-       {/* <ProductList />  */}
+      <Login /> 
+      <Cart /> 
+      <ProductList /> 
       <button onClick={handlePayment}>Checkout</button>
     </div>
   );

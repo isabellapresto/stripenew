@@ -16,6 +16,20 @@ app.use(
   })
 );
 
+
+//produkter
+// export default async function handler(req, res) {
+//   try {
+//     const products = await stripe.products.list({
+//       limit: 100,
+//     });
+
+//     res.status(200).json(products);
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// }
+
 app.post("/create-checkout-session", async (req, res) => {
   try {
     const session = await stripe.checkout.sessions.create({
