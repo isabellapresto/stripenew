@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProductList from './Productlist'; 
 import Login from './Login'; 
 import Cart from './Cart'; 
+import Register from "./Register";
 
 
 
@@ -44,6 +45,7 @@ function Home() {
 
   return (
     <div>
+      <Register/>
       <Login /> 
       <Cart /> 
       <ProductList /> 
