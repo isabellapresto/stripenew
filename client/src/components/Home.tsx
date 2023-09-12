@@ -1,5 +1,10 @@
 import { useState } from "react";
-// import ProductList from './Productlist'; 
+import ProductList from './Productlist'; 
+import Login from './Login'; 
+import Cart from './Cart'; 
+import Register from "./Register";
+
+
 
 
 function Home() {
@@ -40,7 +45,10 @@ function Home() {
 
   return (
     <div>
-       {/* <ProductList />  */}
+      <Register/>
+      <Login /> 
+      <Cart /> 
+      <ProductList /> 
       <button onClick={handlePayment}>Checkout</button>
     </div>
   );
