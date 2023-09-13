@@ -57,11 +57,12 @@
 // export default Home;
 
 import React from 'react'
-import ProductList from './Productlist'; 
+import ProductList from './Products/Productlist'; 
 function Home() {
   return (
-    <div>
-      <ProductList/></div>
+    <div><h1>hej</h1>
+      <ProductList/>
+      </div>
   )
 }
 

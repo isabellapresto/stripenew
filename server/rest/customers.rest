@@ -1,5 +1,5 @@
 //All customers
-# GET: http://localhost:3000/api/customers
+# GET http://localhost:3000/api/customers
 
 ###
 
@@ -8,8 +8,11 @@ POST http://localhost:3000/api/customers/register
 Content-Type: application/json
 
 {
- "username": "Anna" ,
- "password": "1423",
- "email": "isabella111@test.com"
+ "username": "Kalle" ,
+ "password": "111",
+ "email": "test111@test.com"
 }
+###
+//Get all products
+GET http://localhost:3000/api/products
 ###

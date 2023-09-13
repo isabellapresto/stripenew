@@ -10,5 +10,11 @@
     "username": "Anna",
     "password": "$2b$10$5RLbm9CEIglupN25mtsKn.2ZB7dAQCOFO7g5pnK.yDptWcqMnuM4y",
     "email": "isabella111@test.com"
+  },
+  {
+    "id": "cus_OdCO123wTbCPFb",
+    "username": "Kalle",
+    "password": "$2b$10$74rMzQc9jeHikBGA/yls0.f0uoHIiHfH0ONF4sdS9l3xBXjc0oxgG",
+    "email": "test111@test.com"
   }
 ]
