@@ -1,0 +1,15 @@
+//All customers
+# GET: http://localhost:3000/api/customers
+
+###
+
+//New custumer
+POST http://localhost:3000/api/customers/register
+Content-Type: application/json
+
+{
+ "username": "Anna" ,
+ "password": "1423",
+ "email": "isabella111@test.com"
+}
+###

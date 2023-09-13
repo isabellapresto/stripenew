@@ -1,16 +1,20 @@
-// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { initStripe } = require ("../stripe");
+const stripe = initStripe ();
 
-// async function getProducts(req, res) {
-//   try {
-//     const products = await stripe.products.list();
-//     res.json(products.data);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Något gick fel' });
-//   }
-//   console.log(products);
-// }
+async function getProducts(req, res) {
+  try {
+    const products = await stripe.products.list({
+     limit: 5, 
+     expand:[ data.default_price],
+    });
+    res.status(200).json(products);
+   } catch (error) {
+    res.status(500).json ({error: error.message})
+   }
+  }
+    
+  console.log(getProducts);
 
-// module.exports = {
-//   getProducts,
-// };
+module.exports = {
+  getProducts,
+};

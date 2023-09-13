@@ -1,38 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function ProductList() {
-  const [products, setProducts] = useState([]);
+interface Product {
+  id: string;
+  name: string;
+  default_price: number;
+  description: string;
+}
+
+const ProductList: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await fetch('/api/products');
-        if (response.ok) {
-          const data = await response.json();
-          setProducts(data);
-        } else {
-          console.error('Något gick fel vid hämtning av produkter.');
-        }
-      } catch (error) {
-        console.error('Något gick fel vid hämtning av produkter.', error);
-      }
-    }
-
-    fetchProducts();
+ 
+    fetch('/api/products')  //fetch('/products')
+      .then((response) => response.json())
+      .then((data) => setProducts(data.data))
+      .catch((error) => console.error('Något gick fel:', error));
   }, []);
 
   return (
     <div>
       <h1>Produkter</h1>
-      <ul>
+      <div className="product-list">
         {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - {product.description} - {product.price}
-          </li>
+          <div key={product.id} className="product">
+            <h2>{product.name}</h2>
+            <p>Pris: {product.default_price}</p>
+            <p>Beskrivning: {product.description}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default ProductList;
+
