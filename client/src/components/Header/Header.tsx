@@ -9,7 +9,9 @@ function Header() {
         <h1>Logo</h1>
       </div>
       <div className="right">
-        <Link to="/register">Register | Log in to Shop</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/login">Log in to Shop</Link>
+       
         <p>Cart</p>
       </div>
     </div>

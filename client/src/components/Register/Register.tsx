@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import "./Register.css"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +8,8 @@ const Register = () => {
     password: '',
     email: '',
   });
+
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,7 +31,7 @@ const Register = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Customer registered successfully:', data);
-        // You can add any success handling logic here
+        setSuccessMessage('You have been registered successfully');
       } else {
         const errorData = await response.json();
         console.error('Registration error:', errorData);
@@ -41,10 +45,10 @@ const Register = () => {
 
   return (
     <div>
-      <h2>Register Customer</h2>
+      <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username:</label><br />
           <input
             type="text"
             id="username"
@@ -55,7 +59,7 @@ const Register = () => {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password:</label><br />
           <input
             type="password"
             id="password"
@@ -66,7 +70,7 @@ const Register = () => {
           />
         </div>
         <div>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email:</label><br />
           <input
             type="email"
             id="email"
@@ -78,10 +82,15 @@ const Register = () => {
         </div>
         <div>
           <button type="submit">Register</button>
+          {successMessage && <p className="success-message">{successMessage}</p>}
         </div>
       </form>
+      <div><Link to="/login">Log in to Shop</Link></div>
     </div>
+    
   );
+
 };
+
 
 export default Register;

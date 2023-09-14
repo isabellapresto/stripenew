@@ -70,19 +70,42 @@ async function getAllCustomers(req, res) {
   }
 }
 
-// //LOGIN
-// async function logIn (req, res) {
-//   const { username, password } = req.body;
 
-//   try{
-//     const fileData = fs.readFileSync(filePath, "utf8");
-//     const customersArray = JSON.parse(fileData);
 
-//     const customer = customersArray.find((customer) => customer.username === username)
-//   }
-// }
+//LOGIN
+async function logIn(req, res) {
+  const { username, password } = req.body;
+
+  try {
+    const fileData = fs.readFileSync(filePath, "utf8");
+    const customersArray = JSON.parse(fileData);
+
+    // Find the customer by username
+    const customer = customersArray.find((customer) => customer.username === username);
+
+    if (!customer) {
+      // Customer not found
+      return res.status(400).json({ message: "Customer not found" });
+    }
+
+    // Compare the provided password with the hashed password
+    const passwordMatch = await bcrypt.compare(password, customer.password);
+
+    if (passwordMatch) {
+      // Passwords match, customer is logged in
+      res.json({ message: "Customer logged in successfully", user: customer });
+    } else {
+      // Passwords do not match
+      res.status(401).json({ message: "Invalid credentials" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 
 
 module.exports = {
- registerCustomer, getAllCustomers
+  registerCustomer,
+  getAllCustomers,
+  logIn, 
 };
