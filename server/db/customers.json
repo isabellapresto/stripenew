@@ -40,5 +40,17 @@
     "username": "testtest",
     "password": "$2b$10$VX19JALGFLcrRVi2YkdUUuoK7ZWRrKTHZhHUdPZCd5PhHMCbXc//e",
     "email": "testmejl@123.com"
+  },
+  {
+    "id": "cus_OdZBMTIVReKKGi",
+    "username": "Ny kund",
+    "password": "$2b$10$Qu4U61/7BCtMk1aYHKheNexAoGBFIvpkfQlpkzcR1vNnxxI1lK7Re",
+    "email": "nykund@nykund.com"
+  },
+  {
+    "id": "cus_OdZDjTy9DISfX7",
+    "username": "Mei",
+    "password": "$2b$10$gcYe9J.8pz8hEH1MXPUryOcl9eZOFyp8O1hMYnVh1sJay.nQPvr.i",
+    "email": "Mei@hotmail.com"
   }
 ]
