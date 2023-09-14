@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import "./Register.css"
-import Login from "../Login";
+import React, { useState } from 'react';
 
-function Register() {
+const Register = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
+    username: '',
+    password: '',
+    email: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,36 +16,38 @@ function Register() {
     e.preventDefault();
 
     try {
-      // Skicka användardata till din stripe med fetch
-      const response = await fetch("/api/customers/register", {
-        method: "POST",
+      const response = await fetch('http://localhost:3000/api/customers/register', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
-      if (response.status === 200) {
-        console.log("Kund registrerad framgångsrikt.");
-    
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Customer registered successfully:', data);
+        // You can add any success handling logic here
       } else {
-        console.error("Fel vid registrering av kund:", response.statusText);
-    
+        const errorData = await response.json();
+        console.error('Registration error:', errorData);
+        // Handle registration error here
       }
     } catch (error) {
-      console.error("Fel vid registrering av kund:", error);
-   
+      console.error('Registration failed:', error);
+      // Handle registration failure here
     }
   };
 
   return (
-    <div className="container">
-      <h2>Registrera en ny kund</h2>
-      <form  onSubmit={handleSubmit}>
+    <div>
+      <h2>Register Customer</h2>
+      <form onSubmit={handleSubmit}>
         <div>
-          <label>Användarnamn:</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
+            id="username"
             name="username"
             value={formData.username}
             onChange={handleChange}
@@ -55,19 +55,10 @@ function Register() {
           />
         </div>
         <div>
-          <label>E-post:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Lösenord:</label>
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
+            id="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
@@ -75,12 +66,22 @@ function Register() {
           />
         </div>
         <div>
-          <button type="submit">Registrera</button>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <button type="submit">Register</button>
         </div>
       </form>
-      <Login></Login>
     </div>
   );
-}
+};
 
 export default Register;

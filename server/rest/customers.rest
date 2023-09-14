@@ -8,9 +8,9 @@ POST http://localhost:3000/api/customers/register
 Content-Type: application/json
 
 {
- "username": "Kalle" ,
- "password": "111",
- "email": "test111@test.com"
+ "username": "Test" ,
+ "password": "123",
+ "email": "123@test.com"
 }
 ###
 //Get all products
