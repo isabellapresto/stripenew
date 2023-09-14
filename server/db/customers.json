@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cus_Od8s9e4sgXx4xn",
+    "username": "ft4gqgehth chbwdbfcdjhvbgjgruwy",
+    "password": "$2b$10$XDsbYe1Pcp5hGvC12J7rxONdAkpva9pxGcgK8oTkPimWBBjEuNuAq",
+    "email": "isabella@test.com"
+  },
+  {
+    "id": "cus_Od8ug4fhnjvEe2",
+    "username": "Anna",
+    "password": "$2b$10$5RLbm9CEIglupN25mtsKn.2ZB7dAQCOFO7g5pnK.yDptWcqMnuM4y",
+    "email": "isabella111@test.com"
+  },
+  {
+    "id": "cus_OdCO123wTbCPFb",
+    "username": "Kalle",
+    "password": "$2b$10$74rMzQc9jeHikBGA/yls0.f0uoHIiHfH0ONF4sdS9l3xBXjc0oxgG",
+    "email": "test111@test.com"
+  },
+  {
+    "id": "cus_OdVSunkVmqzmfi",
+    "username": "Misraim",
+    "password": "$2b$10$8k/D7xU2lcyO1M9eQDB7vOwLI/eyNX06dtRKt8OtHYlsv/7gF8FPW",
+    "email": "misracanuto@gmail.com"
+  },
+  {
+    "id": "cus_OdVVapHswQSuLx",
+    "username": "Lilo",
+    "password": "$2b$10$KlHU5XuTIW1/8vyfzLX/I.l8sgwj6j9dZgkMpCD3AFJPXyQmCPCFC",
+    "email": "lilo@gmail.com"
+  },
+  {
+    "id": "cus_OdYtiSZLVwQDu3",
+    "username": "Test",
+    "password": "$2b$10$kEvqm9Ews5OAn99vj/5b4eSTlsHYiS8uJAYOzbLn5VmxkHQqZbPu2",
+    "email": "123@test.com"
+  },
+  {
+    "id": "cus_OdZ6vc0OQtuNoF",
+    "username": "testtest",
+    "password": "$2b$10$VX19JALGFLcrRVi2YkdUUuoK7ZWRrKTHZhHUdPZCd5PhHMCbXc//e",
+    "email": "testmejl@123.com"
+  }
+]

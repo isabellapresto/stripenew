@@ -1,16 +1,28 @@
-// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { initStripe } = require('../stripe');
+const stripe = initStripe();
 
-// async function getProducts(req, res) {
-//   try {
-//     const products = await stripe.products.list();
-//     res.json(products.data);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Något gick fel' });
-//   }
-//   console.log(products);
-// }
+const fs = require('fs');
+const path = require('path');
 
-// module.exports = {
-//   getProducts,
-// };
+const filePath = path.join('db', 'products.json');
+
+async function getProducts(req, res) {
+  try {
+    const products = await stripe.products.list({
+      limit: 5,
+      expand: ['data.default_price'],
+    });
+
+    // lägg till i json
+    fs.writeFileSync(filePath, JSON.stringify(products.data, null, 2));
+
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+    
+  }
+}
+
+module.exports = {
+  getProducts,
+};
