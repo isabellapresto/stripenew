@@ -49,7 +49,12 @@ const ProductList: React.FC = () => {
             <div className="product-details">
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <p>Price: {product.price} {product.currency}</p>
+              {/* visas inte */}
+              <p>{product.price} {product.currency}</p>
+              <button>Add to cart</button>
+            </div>
+            <div>
+             
             </div>
           </li>
         ))}

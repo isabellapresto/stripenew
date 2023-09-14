@@ -30,6 +30,21 @@
 }
 
 .product-details {
+padding: 20px;
+}
 
+button {
+ background-color:  black;  /* Blue background color */
+ color: #fff; /* White text color */
+ border: none;
+ padding: 8px 16px;
+ border-radius: 4px;
+ cursor: pointer;
+padding: 10px;
+ transition: background-color 0.3s ease;
+}
+
+button:hover {
+ background-color: pink; 
 }
 

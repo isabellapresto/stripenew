@@ -16,5 +16,17 @@
     "username": "Kalle",
     "password": "$2b$10$74rMzQc9jeHikBGA/yls0.f0uoHIiHfH0ONF4sdS9l3xBXjc0oxgG",
     "email": "test111@test.com"
+  },
+  {
+    "id": "cus_OdVSunkVmqzmfi",
+    "username": "Misraim",
+    "password": "$2b$10$8k/D7xU2lcyO1M9eQDB7vOwLI/eyNX06dtRKt8OtHYlsv/7gF8FPW",
+    "email": "misracanuto@gmail.com"
+  },
+  {
+    "id": "cus_OdVVapHswQSuLx",
+    "username": "Lilo",
+    "password": "$2b$10$KlHU5XuTIW1/8vyfzLX/I.l8sgwj6j9dZgkMpCD3AFJPXyQmCPCFC",
+    "email": "lilo@gmail.com"
   }
 ]
