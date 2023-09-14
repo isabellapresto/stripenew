@@ -52,5 +52,11 @@
     "username": "Mei",
     "password": "$2b$10$gcYe9J.8pz8hEH1MXPUryOcl9eZOFyp8O1hMYnVh1sJay.nQPvr.i",
     "email": "Mei@hotmail.com"
+  },
+  {
+    "id": "cus_OdZUdeZDUpI2aB",
+    "username": "Joy",
+    "password": "$2b$10$ZuYwZFtCQpLr04AMufPS5eb7ICiuUujywT.8pwLhX9fCJqfWBVwTS",
+    "email": "Joy@hotmail.com"
   }
 ]
