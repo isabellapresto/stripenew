@@ -92,7 +92,11 @@ async function logIn(req, res) {
     const passwordMatch = await bcrypt.compare(password, customer.password);
 
     if (passwordMatch) {
-      // Passwords match, customer is logged in
+   
+    // Set session COOKIES - hur ska man sätta cookies?
+    req.session.customer = customer;
+    console.log('User logged in cookies:', customer); 
+
       res.json({ message: "Customer logged in successfully", user: customer });
     } else {
       // Passwords do not match

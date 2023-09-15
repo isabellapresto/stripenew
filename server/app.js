@@ -4,8 +4,8 @@ const bodyParser = require ("body-parser")
 const { customerRouter } = require ("./routes/customerRouter");
 const { productRouter } = require ("./routes/productRouter");
 // const { checkoutRouter } = require ("./routes/checkoutRouter");
-// const cookieSession = require ("cookie-session");
-// const crypto = require ("crypto"); //installera ?
+const cookieSession = require ("cookie-session");
+const crypto = require ("crypto"); 
 
 const app = express();
 
@@ -15,15 +15,14 @@ app.use(cors({
 }));
 
 // crypto key
-// const secretKey = process.env.COOKIE_SECRET_KEY;
+const secretKey = process.env.COOKIE_SECRET_KEY;
 
-//Cookies
-// app.use(cookieSession({
-//   name: 'session',
-//   keys: [/* secret keys */],
-//   maxAge: 24 * 60 * 60 * 1000 // 24 hours
-// }))
-
+// //Cookies
+app.use(cookieSession({
+  name: 'session',
+  keys: [secretKey],
+  maxAge: 24 * 60 * 60 * 1000 
+}))
 
 app.use(express.json());
 app.use(bodyParser.json());

@@ -148,5 +148,11 @@
     "username": "jonas",
     "password": "$2b$10$22Slni8XKFpMVKl2I.FtCOIL1lWtONU8/bqlIgvJoPD32PtCNvFca",
     "email": "jonas@test.com"
+  },
+  {
+    "id": "cus_OdzvWQFu6p4Cak",
+    "username": "pelle",
+    "password": "$2b$10$G8bexGJNaBg4bfzilQWoNutZmSjEhPL7T4N.z0dimGE8I9Pjju5kS",
+    "email": "pelle@test.com"
   }
 ]
