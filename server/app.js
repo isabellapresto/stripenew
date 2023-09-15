@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require ("body-parser")
 const { customerRouter } = require ("./routes/customerRouter");
 const { productRouter } = require ("./routes/productRouter");
-const { checkoutRouter } = require ("./routes/checkoutRouter");
+// const { checkoutRouter } = require ("./routes/checkoutRouter");
 // const cookieSession = require ("cookie-session");
 // const crypto = require ("crypto"); //installera ?
 

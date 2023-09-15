@@ -103,6 +103,9 @@ async function logIn(req, res) {
   }
 }
 
+async function logOut (req, res) {
+  
+}
 
 module.exports = {
   registerCustomer,

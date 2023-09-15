@@ -3,16 +3,27 @@
 
 ###
 
-//New custumer
+//Register custumer
 POST http://localhost:3000/api/customers/register
 Content-Type: application/json
 
 {
- "username": "Test" ,
+ "username": "Hanna" ,
  "password": "123",
- "email": "123@test.com"
+ "email": "hanna@test.com"
 }
 ###
+
+//Login customer 
+POST http://localhost:3000/api/customers/login
+Content-Type: application/json
+
+{
+ "username": "Hanna" ,
+ "password": "123"
+}
+###
+
 //Get all products
 GET http://localhost:3000/api/products
 ###

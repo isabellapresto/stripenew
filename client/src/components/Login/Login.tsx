@@ -19,10 +19,31 @@ const Login: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // You can add your login logic here
-    console.log('Submitted data:', formData);
+
+    try {
+      const response = await fetch('http://localhost:3000/api/customers/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Login successful:', data);
+        // You can add any success handling logic here
+      } else {
+        const errorData = await response.json();
+        console.error('Login error:', errorData);
+        // Handle login error here
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      // Handle login failure here
+    }
   };
 
   return (
@@ -30,7 +51,7 @@ const Login: React.FC = () => {
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username:</label><br />
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
@@ -41,7 +62,7 @@ const Login: React.FC = () => {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label><br />
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"

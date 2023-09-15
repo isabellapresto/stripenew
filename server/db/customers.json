@@ -112,5 +112,29 @@
     "username": "test",
     "password": "$2b$10$kTC9DyAVa0Fh3up.F0qakuhozflYToyJfxiDTVbhS9lusSVj5gFIK",
     "email": "test@test.com"
+  },
+  {
+    "id": "cus_OdqEDA5YEIyVyI",
+    "username": "Carina",
+    "password": "$2b$10$OBpiv6pYzYbTMow1YDFq1u0g4uSBGibGrTiaoxagLoGxEsnR0cJoS",
+    "email": "carina@test.com"
+  },
+  {
+    "id": "cus_OdqlLsUvcUryWL",
+    "username": "test_test",
+    "password": "$2b$10$L9mUYBmfeu59OPkbYqyQv.pY4bb.CExLG73OAQlp08T3o1WWocbg2",
+    "email": "test_test@hotmail.com"
+  },
+  {
+    "id": "cus_OdrahftyrB8caw",
+    "username": "Hanna",
+    "password": "$2b$10$l/eNpdmtUMssSdWi9a9GGucQ8SkszpclRRaVQ28J5V.2ct8lqrAv2",
+    "email": "hanna@test.com"
+  },
+  {
+    "id": "cus_Odt7YD7yNTKo5W",
+    "username": "Saskia",
+    "password": "$2b$10$e2GUUDhvW1vKyyoqAPFYH.nbTLAXHI9QB0kAemw/JVUMF6C.9go6e",
+    "email": "saskia@test.com"
   }
 ]
