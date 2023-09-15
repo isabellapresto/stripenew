@@ -136,5 +136,17 @@
     "username": "Saskia",
     "password": "$2b$10$e2GUUDhvW1vKyyoqAPFYH.nbTLAXHI9QB0kAemw/JVUMF6C.9go6e",
     "email": "saskia@test.com"
+  },
+  {
+    "id": "cus_Odu0UHU47TX5tG",
+    "username": "12",
+    "password": "$2b$10$z4vXQ/kCCxZXOQ6N3.aKsuKuiZnDKupWucEdQv66hTQ9gb3UY7o5.",
+    "email": "1@12.com"
+  },
+  {
+    "id": "cus_Odu41D7rJOyGYO",
+    "username": "jonas",
+    "password": "$2b$10$22Slni8XKFpMVKl2I.FtCOIL1lWtONU8/bqlIgvJoPD32PtCNvFca",
+    "email": "jonas@test.com"
   }
 ]

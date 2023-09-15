@@ -35,11 +35,9 @@ const Register = () => {
       } else {
         const errorData = await response.json();
         console.error('Registration error:', errorData);
-        // Handle registration error here
       }
     } catch (error) {
       console.error('Registration failed:', error);
-      // Handle registration failure here
     }
   };
 
@@ -89,8 +87,6 @@ const Register = () => {
     </div>
     
   );
-
 };
-
 
 export default Register;

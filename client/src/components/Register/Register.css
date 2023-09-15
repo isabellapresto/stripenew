@@ -1,11 +1,9 @@
-
 body {
  display: flex;
  justify-content: center;
  align-items: center;
  height: 100vh; 
 }
-
 
 .container {
 
@@ -21,7 +19,6 @@ form {
 
 }
 
-/* Input field styling */
 label {
  font-weight: bold;
 }
@@ -45,13 +42,11 @@ button[type="submit"] {
  border-radius: 3px;
  cursor: pointer;
  font-size: 16px; 
-
  justify-content: center;
 }
 
 button[type="submit"]:hover {
  background-color: pink;
- 
 }
 
 .success-message {

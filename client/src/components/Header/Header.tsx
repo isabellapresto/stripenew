@@ -11,7 +11,6 @@ function Header() {
       <div className="right">
         <Link to="/register">Register</Link>
         <Link to="/login">Log in to Shop</Link>
-       
         <p>Cart</p>
       </div>
     </div>
