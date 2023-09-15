@@ -1,39 +1,26 @@
-/* styles.css */
-
-/* Hela sidans centreringscontainer */
 body {
  display: flex;
  justify-content: center;
  align-items: center;
-
+ height: 100vh; 
 }
 
-/* Container styling */
 .container {
- width: 300px;
- padding: 20px;
- background-color: white;
- border-radius: 5px;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
-/* Heading styling */
 h2 {
  font-size: 24px;
  margin-bottom: 20px;
  text-align: center;
 }
 
-/* Form styling */
 form {
- display: flex;
- flex-direction: column;
+
 }
 
-/* Input field styling */
 label {
  font-weight: bold;
- margin-bottom: 8px;
 }
 
 input[type="text"],
@@ -43,27 +30,29 @@ input[type="password"] {
  margin-bottom: 15px;
  border: 1px solid #ccc;
  border-radius: 3px;
- font-size: 16px; /* Justera textstorleken efter behov */
+ font-size: 16px; 
 }
 
-/* Submit button styling */
+
 button[type="submit"] {
  padding: 10px 20px;
- background-color:black;
+ background-color: black;
  color: white;
  border: none;
  border-radius: 3px;
  cursor: pointer;
- font-size: 18px; /* Justera textstorleken efter behov */
+ font-size: 16px; 
+ justify-content: center;
 }
 
 button[type="submit"]:hover {
  background-color: pink;
 }
 
-/* Error message styling */
-.error-message {
- color: red;
- margin-top: 10px;
+.success-message {
+ background-color: #4CAF50; 
+ color: white;
+ padding: 10px; 
+ margin-top: 10px; 
  text-align: center;
 }

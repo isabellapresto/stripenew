@@ -70,19 +70,74 @@ async function getAllCustomers(req, res) {
   }
 }
 
-// //LOGIN
-// async function logIn (req, res) {
-//   const { username, password } = req.body;
 
-//   try{
-//     const fileData = fs.readFileSync(filePath, "utf8");
-//     const customersArray = JSON.parse(fileData);
 
-//     const customer = customersArray.find((customer) => customer.username === username)
-//   }
-// }
+//LOGIN
+async function logIn(req, res) {
+  const { username, password } = req.body;
 
+  try {
+    const fileData = fs.readFileSync(filePath, "utf8");
+    const customersArray = JSON.parse(fileData);
+
+    // Find the customer by username
+    const customer = customersArray.find((customer) => customer.username === username);
+
+    if (!customer) {
+      // Customer not found
+      return res.status(400).json({ message: "Customer not found" });
+    }
+
+    // Compare the provided password with the hashed password
+    const passwordMatch = await bcrypt.compare(password, customer.password);
+
+    if (passwordMatch) {
+   
+    // Set session COOKIES - hur ska man sätta cookies?
+    req.session.customer = customer;
+    console.log('User logged in cookies:', customer); 
+
+      res.json({ message: "Customer logged in successfully", user: customer });
+    } else {
+      // Passwords do not match
+      res.status(401).json({ message: "Invalid credentials" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+
+// LOGOUT
+async function logOut(req, res) {
+  try {
+    // Här kan du utföra eventuella log-out-åtgärder, t.ex. rensa sessionen
+    // och sätt användaren till null eller någon annan representation av "utloggad".
+
+    res.json({ message: "Customer logged out successfully" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+// AUTHORIZE
+async function authorize(req, res, next) {
+  const { user } = req; // Antag att du har en användare lagrad i req-objektet efter inloggning
+
+  if (user) {
+    // Användaren är inloggad, gå vidare till nästa middleware eller rutt
+    next();
+  } else {
+    // Användaren är inte inloggad, skicka en förbjuden (403) status
+    res.status(403).json({ message: "Unauthorized" });
+  }
+}
 
 module.exports = {
- registerCustomer, getAllCustomers
+  registerCustomer,
+  getAllCustomers,
+  logIn,
+  logOut,
+  authorize, // Lägg till authorize här
 };
+
