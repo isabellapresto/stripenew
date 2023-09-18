@@ -34,15 +34,15 @@ const Login: React.FC = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Login successful:', data);
-        // You can add any success handling logic here
+        
       } else {
         const errorData = await response.json();
         console.error('Login error:', errorData);
-        // Handle login error here
+      
       }
     } catch (error) {
       console.error('Login failed:', error);
-      // Handle login failure here
+   
     }
   };
 

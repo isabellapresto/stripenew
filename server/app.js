@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require ("body-parser")
 const { customerRouter } = require ("./routes/customerRouter");
 const { productRouter } = require ("./routes/productRouter");
-// const { checkoutRouter } = require ("./routes/checkoutRouter");
+const { checkoutRouter } = require ("./routes/checkoutRouter");
 const cookieSession = require ("cookie-session");
 const crypto = require ("crypto"); 
 
@@ -30,6 +30,6 @@ app.use(bodyParser.json());
 //Routes
 app.use("/api", customerRouter);
 app.use("/api", productRouter);
-// app.use("/api", checkoutRouter);
+app.use("/api", checkoutRouter);
 
 module.exports = { app }
