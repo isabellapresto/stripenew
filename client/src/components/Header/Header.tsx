@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import ShoppingCartIcon from '../ShoppingCartIcon/ShoppingCartIcon';
+
 
 function Header() {
   return (
@@ -11,7 +13,7 @@ function Header() {
       <div className="right">
         <Link to="/register">Register</Link>
         <Link to="/login">Log in to Shop</Link>
-        <p>Cart</p>
+       <ShoppingCartIcon></ShoppingCartIcon>
       </div>
     </div>
   );

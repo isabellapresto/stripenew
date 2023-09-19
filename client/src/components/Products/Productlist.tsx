@@ -1,34 +1,10 @@
-import React, { useEffect, useState } from 'react';
+
 import './Productlist.css'; 
+// import addToCart from "../Drawer/Drawer"
+import { useProductContext } from "../../../Context/productContext"
 
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  price: string;
-  currency: string;
-  images: string[];
-}
-
-const ProductList: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    // Fetch products
-    fetch('/api/products')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch products');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setProducts(data.data || []);
-      })
-      .catch((error) => {
-        console.error('Error fetching products:', error);
-      });
-  }, []);
+function ProductList(){
+  const { products, addToCart } = useProductContext();
 
   return (
     <div className="product-list">
@@ -36,21 +12,17 @@ const ProductList: React.FC = () => {
         {products.map((product) => (
           <li key={product.id} className="product-card">
             <div className="product-image">
-              {product.images && product.images.length > 0 && (
-                <img
-                  src={product.images[0]}
-                  alt={`${product.name} - Image 1`}
-                  width="100"
-                  height="100"
-                />
-              )}
+       <img
+          src={product.image}
+          alt={product.name}
+        />
+
             </div>
             <div className="product-details">
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              {/* visas inte */}
-              <p>{product.price} {product.currency}</p>
-              <button>Add to cart</button>
+              <p>{product.price.unit_amount} {product.price.currency}</p>
+              <button onClick = {() => addToCart(product.price.id, product.name, product.image, product.price.unit_amount, product.price.currency)}>Add to cart</button>
             </div>
             <div>
              
@@ -60,6 +32,6 @@ const ProductList: React.FC = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default ProductList;
