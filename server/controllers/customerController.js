@@ -107,13 +107,14 @@ async function logIn(req, res) {
 // LOGOUT
 async function logOut(req, res) {
   try {
-  
-// inte klar
+    // Ta bort användarens session
+    req.session.customer = null;
     res.json({ message: "Customer logged out successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
+
 
 // AUTHORIZE
 async function authorize(req, res, next) {
