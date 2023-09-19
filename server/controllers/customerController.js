@@ -10,7 +10,6 @@ async function registerCustomer(req, res) {
   try {
     const { username, password, email } = req.body;
 
-    // Läs in befintna kunder från JSON-filen
     let customersArray = [];
 
     try {
@@ -70,8 +69,6 @@ async function getAllCustomers(req, res) {
   }
 }
 
-
-
 //LOGIN
 async function logIn(req, res) {
   const { username, password } = req.body;
@@ -84,7 +81,6 @@ async function logIn(req, res) {
     const customer = customersArray.find((customer) => customer.username === username);
 
     if (!customer) {
-      // Customer not found
       return res.status(400).json({ message: "Customer not found" });
     }
 
@@ -93,11 +89,12 @@ async function logIn(req, res) {
 
     if (passwordMatch) {
    
-    // Set session COOKIES - hur ska man sätta cookies?
-    req.session.customer = customer;
-    console.log('User logged in cookies:', customer); 
+// Delete password?
 
-      res.json({ message: "Customer logged in successfully", user: customer });
+    // Set session COOKIES - hur ska man sätta cookies? Sätts i .rest men inte i konsoll
+    req.session = customer;
+    console.log('User logged in cookies:', customer); 
+    res.status(200).json({Message: "Successfully logged in", customer: {username: customer.username, email: customer.email}});;
     } else {
       // Passwords do not match
       res.status(401).json({ message: "Invalid credentials" });
@@ -107,13 +104,11 @@ async function logIn(req, res) {
   }
 }
 
-
 // LOGOUT
 async function logOut(req, res) {
   try {
-    // Här kan du utföra eventuella log-out-åtgärder, t.ex. rensa sessionen
-    // och sätt användaren till null eller någon annan representation av "utloggad".
-
+  
+// inte klar
     res.json({ message: "Customer logged out successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -122,13 +117,11 @@ async function logOut(req, res) {
 
 // AUTHORIZE
 async function authorize(req, res, next) {
-  const { user } = req; // Antag att du har en användare lagrad i req-objektet efter inloggning
+  const { user } = req; 
 
-  if (user) {
-    // Användaren är inloggad, gå vidare till nästa middleware eller rutt
+  if (customer) {
     next();
   } else {
-    // Användaren är inte inloggad, skicka en förbjuden (403) status
     res.status(403).json({ message: "Unauthorized" });
   }
 }
@@ -138,6 +131,6 @@ module.exports = {
   getAllCustomers,
   logIn,
   logOut,
-  authorize, // Lägg till authorize här
+  authorize, 
 };
 

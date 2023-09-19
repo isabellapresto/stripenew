@@ -9,29 +9,13 @@ interface ShoppingDrawerProps {
 
 function MyDrawer({open, setOpen}: ShoppingDrawerProps) {
   const {cart, handlePayment} = useProductContext();
- const toggleDrawer = () => (event: { type: string; key: string; }) => {
+  const toggleDrawer = () => (event: { type: string; key: string; }) => {
 
   if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
-
     return;
-
   }
   setOpen(false);
-
 };
-
-
-
-// const handleButtonClick = () => {
-
-//   setOpen(false);
-
-// };
-
-// export function addToCart() {
-// console.log("log från addToCart")
-// }
-
 
 return (
   <Drawer anchor="right" open={open} onClose={toggleDrawer()}>

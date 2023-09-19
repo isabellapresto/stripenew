@@ -82,7 +82,7 @@ const Register = () => {
           <button type="submit">Register</button>
           {successMessage && <p className="success-message">{successMessage}</p>}
         </div>
-      </form>
+      </form> <br />
       <div><Link to="/login">Log in to Shop</Link></div>
     </div>
     

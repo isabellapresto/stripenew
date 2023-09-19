@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import ShoppingCartIcon from '../ShoppingCartIcon/ShoppingCartIcon';
 
-
 function Header() {
   return (
     <div className="header-container">
