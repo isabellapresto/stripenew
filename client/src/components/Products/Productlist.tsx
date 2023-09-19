@@ -1,6 +1,5 @@
 
 import './Productlist.css'; 
-// import addToCart from "../Drawer/Drawer"
 import { useProductContext } from "../../../Context/productContext"
 
 function ProductList(){
@@ -25,7 +24,6 @@ function ProductList(){
               <button onClick = {() => addToCart(product.price.id, product.name, product.image, product.price.unit_amount, product.price.currency)}>Add to cart</button>
             </div>
             <div>
-             
             </div>
           </li>
         ))}

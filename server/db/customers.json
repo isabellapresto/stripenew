@@ -34,5 +34,23 @@
     "username": "few",
     "password": "$2b$10$xh55XLESaQ5iYs4bWcDSZOxn2QNmw/rRzPgnh0dREOCzCUP1lzuLW",
     "email": "ttt@bhgy.com"
+  },
+  {
+    "id": "cus_OfLkhGTjDDIId3",
+    "username": "viola",
+    "password": "$2b$10$LeU0lCW5vVxTsuP2x9i5xudoGHKXiJ4iKodRjWfy9SHuX9/PH2zEy",
+    "email": "viola@test.com"
+  },
+  {
+    "id": "cus_OfOCVlO5xl7XRw",
+    "username": "lilolilo",
+    "password": "$2b$10$/1hIpMbtBaEEG2xn2SMDEuBFkiMSfBlEMA0tpgHgwb6H.Vgcykt4.",
+    "email": "lilo@lilo.com"
+  },
+  {
+    "id": "cus_OfODzmXpfomzg9",
+    "username": "Lilo",
+    "password": "$2b$10$T2c7vOUfk9LRIWX7JmMwiOhXfH/QHN2uXIyAMTz4E2z.EPKCUWUSa",
+    "email": "lilo123@gmail.com"
   }
 ]

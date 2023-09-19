@@ -29,6 +29,7 @@ const Login: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+
       });
 
       if (response.ok) {
