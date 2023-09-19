@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 interface LoginFormState {
   username: string;
   password: string;
@@ -75,6 +76,7 @@ const Login: React.FC = () => {
         </div>
         <div>
           <button type="submit">Login</button>
+          {/* <button>Logout</button> */}
         </div>
       </form>
     </div>
