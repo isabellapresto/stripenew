@@ -64,5 +64,35 @@
     "username": "Fredrik123",
     "password": "$2b$10$RaUnPI5a5iMQP1mmQ4cjK.8jEuuofsmtAXIKPL5r05nxpw1b.ZOs6",
     "email": "fredrik123@gmail.com"
+  },
+  {
+    "id": "cus_OfoyNwE9CDAAVL",
+    "username": "vsfgr",
+    "password": "$2b$10$bymU2LdQJDQLievrrXlX/ePGWx42/0orgZiR9dL8nnEv.yVw01jxS",
+    "email": "dwhb@hh.com"
+  },
+  {
+    "id": "cus_Ofp7xwvtELHvFs",
+    "username": "njhedh",
+    "password": "$2b$10$p8S7kW6OnDRXDG6Nbq8kveIGyvFysKyKsIUSOY1gc7Dz9B4EV.HPa",
+    "email": "xsa@hh.com"
+  },
+  {
+    "id": "cus_OfpFLuGTD76Vru",
+    "username": "Misraim",
+    "password": "$2b$10$oE5KJB9qCCwNcyEX79W59uTGGIgjPo4D6trICrcy6Hdr4iH/CPTDG",
+    "email": "mc@hotmail.com"
+  },
+  {
+    "id": "cus_OfpHxulHVWBAJq",
+    "username": "q",
+    "password": "$2b$10$CR1elQHTVTalwtUwiBiqo.9CKT9oUCo11yAJBMalgXW27EsZyitwi",
+    "email": "q@q.com"
+  },
+  {
+    "id": "cus_OfphKlozDoXRW5",
+    "username": "Canuto",
+    "password": "$2b$10$Aa/U1kDi3CDm0j/Gyh3F7unwDIbbt.SpjE4.k0PDlIZIFpnvTWu1K",
+    "email": "canuto@hh.com"
   }
 ]

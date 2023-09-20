@@ -1,22 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Header.css';
 import ShoppingCartIcon from '../ShoppingCartIcon/ShoppingCartIcon';
 import Login from '../Login/Login';
+import Register from '../Register/Register';
 
 function Header() {
   return (
     <div className="header-container">
-      <div className="left">
-        <h1>Logo</h1>
-      </div>
-      <div className="right">
-        <Link to="/register">Register</Link>
-        <Login></Login>
-       <ShoppingCartIcon></ShoppingCartIcon>
+      <h1 className="logo">Logo</h1>
+      <div className="button-container">
+        <Register />
+        <Login />
+        <ShoppingCartIcon />
       </div>
     </div>
   );
 }
 
 export default Header;
+

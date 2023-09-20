@@ -21,7 +21,7 @@ function ProductList(){
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <p>{product.price.unit_amount} {product.price.currency}</p>
-              <button onClick = {() => addToCart(product.price.id, product.name, product.image, product.price.unit_amount, product.price.currency)}>Add to cart</button>
+              <button className='addToCart' onClick = {() => addToCart(product.price.id, product.name, product.image, product.price.unit_amount, product.price.currency)}>Add to cart</button>
             </div>
             <div>
             </div>

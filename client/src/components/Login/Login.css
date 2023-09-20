@@ -1,0 +1,11 @@
+.modal-content {
+ background-color: #fff;
+ padding: 20px;
+ border-radius: 5px;
+ max-width: 400px;
+ margin: 0 auto;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}

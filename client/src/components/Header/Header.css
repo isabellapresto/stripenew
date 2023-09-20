@@ -2,24 +2,14 @@
  display: flex;
  justify-content: space-between;
  align-items: center;
- padding: 10px 20px; 
+ padding: 10px 20px;
 }
 
-.left {
-
-}
-
-.right {
+.button-container {
  display: flex;
- align-items: center;
+ gap: 10px; /* Lägger till mellanrum mellan knapparna */
+ align-items: center; /* Centrerar vertikalt */
+ justify-content: flex-end; /* Placerar knapparna på höger sida */
 }
 
-.right a {
-
- text-decoration: none; 
- margin-right: 20px; 
-}
-
-.right p {
- 
-}
+/* ... andra stilar ... */

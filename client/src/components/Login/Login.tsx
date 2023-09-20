@@ -3,7 +3,7 @@ import Modal from '@mui/material/Modal';
 import { useCustomerContext, RegisteredCustomer } from "../../../Context/customerContext";
 
 export default function Login() {
-  const { login } = useCustomerContext();
+  const { login, loggedInCustomer } = useCustomerContext();
 
   // Modal state
   const [open, setOpen] = useState(false);
@@ -16,6 +16,9 @@ export default function Login() {
     password: '',
   });
 
+  // Success message state
+  const [successMessage, setSuccessMessage] = useState('');
+
   // Function to handle input changes
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -25,7 +28,7 @@ export default function Login() {
     });
   };
 
-  // Function to handle form 
+  // Function to handle form submission
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -44,8 +47,13 @@ export default function Login() {
       password: '',
     });
 
-    // Close the modal
-    handleClose();
+    // Check if the user is logged in and set the success message
+    if (loggedInCustomer) {
+      setSuccessMessage('Du är inloggad');
+    }
+
+    // Keep the modal open
+    handleClose(); // Ta bort detta så att modalen inte stängs automatiskt
   };
 
   return (
@@ -57,33 +65,37 @@ export default function Login() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="username">Username:</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={formValues.username}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formValues.password}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div>
-            <button type="submit">Log in into account</button>
-          </div>
-        </form>
+        <div className="modal-content">
+          <h2>Log in</h2>
+          {successMessage && <p>{successMessage}</p>}
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formValues.username}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formValues.password}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div>
+              <button type="submit">Log in</button>
+            </div>
+          </form>
+        </div>
       </Modal>
     </div>
   );
