@@ -1,5 +1,5 @@
 function Confirmation() {
- return <div>Tack för ditt köp</div>;
+ return <div>Thank you for your purchase!</div>;
 }
 
 export default Confirmation;
