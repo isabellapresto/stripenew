@@ -21,13 +21,14 @@ function MyDrawer({open, setOpen}: ShoppingDrawerProps) {
 };
 
 return (
+ 
   <Drawer anchor="right" open={open} onClose={toggleDrawer()}>
     <h2>Your Shoppingcart</h2>
-    <ul>
+    <ul className='product-list'>
       {cart.map((cartItem, index) => (
         <li key={index}>
-          <div className="product-image">
-            <img src={cartItem.image} alt={cartItem.name} />
+          <div>
+            <img className="product-image-drawer"src={cartItem.image} alt={cartItem.name} />
           </div>
     
           <div>
@@ -38,11 +39,12 @@ return (
         </li>
       ))}
     </ul>
-      {/*button only appears if the user is logged in */}
+      {/*knappen visas endast om användaren är inloggad */}
       {loggedInCustomer ? (
         <button onClick={handlePayment}>Go to Checkout</button>
       ) : null}
   </Drawer>
+
 );
 
 }
