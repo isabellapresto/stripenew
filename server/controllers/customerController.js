@@ -115,10 +115,9 @@ async function logOut(req, res) {
   }
 }
 
-
 // AUTHORIZE
 async function authorize(req, res, next) {
-  const { user } = req; 
+  const { customer } = req; 
 
   if (customer) {
     next();

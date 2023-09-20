@@ -1,6 +1,7 @@
 import React from 'react'
 import Drawer from "@mui/material/Drawer";
 import { useProductContext } from '../../../Context/productContext';
+import { useCustomerContext } from '../../../Context/customerContext';
 
 interface ShoppingDrawerProps {
  open: boolean;
@@ -9,6 +10,7 @@ interface ShoppingDrawerProps {
 
 function MyDrawer({open, setOpen}: ShoppingDrawerProps) {
   const {cart, handlePayment} = useProductContext();
+  const { loggedInCustomer } = useCustomerContext(); 
   const toggleDrawer = () => (event: { type: string; key: string; }) => {
 
   if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
@@ -35,8 +37,10 @@ return (
         </li>
       ))}
     </ul>
-    //
-    <button onClick={handlePayment}>Go to Checkout</button>
+      {/*knappen visas endast om användaren är inloggad */}
+      {loggedInCustomer ? (
+        <button onClick={handlePayment}>Go to Checkout</button>
+      ) : null}
   </Drawer>
 );
 

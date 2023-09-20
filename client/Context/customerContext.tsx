@@ -61,7 +61,7 @@ export const CustomerContext = createContext<CustomerContext>(defaultValues);
 export const useCustomerContext = () => useContext(CustomerContext);
 
 // UserProvider component
-const CustomerProvider = ({ children }: PropsWithChildren<object>) => { //object
+const CustomerProvider = ({ children }: PropsWithChildren<{}>) => { //object
  const [loggedInCustomer, setloggedInCustomer] = useState<Customer | null>(null);
  const [username, setUsername] = useState("");
  const [email, setEmail] = useState("");
