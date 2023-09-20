@@ -88,13 +88,13 @@ async function logIn(req, res) {
     const passwordMatch = await bcrypt.compare(password, customer.password);
 
     if (passwordMatch) {
-   
-// Delete password?
+      // delete
+      delete customer.password;
 
     // Set session COOKIES - hur ska man sätta cookies? Sätts i .rest men inte i konsoll
     req.session = customer;
     console.log('User logged in cookies:', customer); 
-    res.status(200).json({Message: "Successfully logged in", customer: {username: customer.username, email: customer.email}});;
+    res.status(200).json({Message: "Successfully logged in", customer: {username: customer.username}});;
     } else {
       // Passwords do not match
       res.status(401).json({ message: "Invalid credentials" });
@@ -108,17 +108,16 @@ async function logIn(req, res) {
 async function logOut(req, res) {
   try {
     // Ta bort användarens session
-    req.session.customer = null;
-    res.json({ message: "Customer logged out successfully" });
+    req.session = null;
+    res.status(200).json("Customer logged out successfully" );
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
 
-
 // AUTHORIZE
 async function authorize(req, res, next) {
-  const { user } = req; 
+  const { customer } = req; 
 
   if (customer) {
     next();

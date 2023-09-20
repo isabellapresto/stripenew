@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import ShoppingCartIcon from '../ShoppingCartIcon/ShoppingCartIcon';
+import Login from '../Login/Login';
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
       </div>
       <div className="right">
         <Link to="/register">Register</Link>
-        <Link to="/login">Log in to Shop</Link>
+        <Login></Login>
        <ShoppingCartIcon></ShoppingCartIcon>
       </div>
     </div>

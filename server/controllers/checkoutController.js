@@ -13,6 +13,7 @@ const checkOut = async (req,res) => {
           quantity: item.quantity,
         };
       }),
+      customer: req.session.id,
       mode: "payment",
       success_url: `${CLIENT_URL}/confirmation`,
       cancel_url: CLIENT_URL,
