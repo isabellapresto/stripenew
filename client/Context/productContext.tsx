@@ -1,5 +1,5 @@
 import  { PropsWithChildren, createContext, useContext, useState, useEffect} from "react";
-// import { user } from "./userContext"
+// import userContext
 
 interface IProductContext {
  products: ProductData [];
