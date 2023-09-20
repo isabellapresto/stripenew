@@ -2,6 +2,7 @@ import React from 'react'
 import Drawer from "@mui/material/Drawer";
 import { useProductContext } from '../../../Context/productContext';
 import { useCustomerContext } from '../../../Context/customerContext';
+import "./Drawer.css"
 
 interface ShoppingDrawerProps {
  open: boolean;
@@ -21,7 +22,7 @@ function MyDrawer({open, setOpen}: ShoppingDrawerProps) {
 
 return (
   <Drawer anchor="right" open={open} onClose={toggleDrawer()}>
-    <div>My Drawer</div>
+    <h2>Your Shoppingcart</h2>
     <ul>
       {cart.map((cartItem, index) => (
         <li key={index}>
@@ -37,7 +38,7 @@ return (
         </li>
       ))}
     </ul>
-      {/*knappen visas endast om användaren är inloggad */}
+      {/*button only appears if the user is logged in */}
       {loggedInCustomer ? (
         <button onClick={handlePayment}>Go to Checkout</button>
       ) : null}

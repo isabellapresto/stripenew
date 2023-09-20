@@ -1,5 +1,4 @@
 import  { PropsWithChildren, createContext, useContext, useState, useEffect} from "react";
-// import userContext
 
 interface IProductContext {
  products: ProductData [];
@@ -90,7 +89,7 @@ useEffect(() => {
 
 function addToCart (id: string, name: string, image:string, price:string, currency:string) {
     const existingCartItem = cart.find((item) => item.product === id);
- // If the product is already in the cart, update  quantity
+ // If the product is already in the cart, update quantity
         if (existingCartItem) {
             setCart((prevCart) =>prevCart.map((item) => item.product === id? { ...item, quantity: item.quantity + 1 }: item))
         } else {
@@ -108,7 +107,6 @@ function addToCart (id: string, name: string, image:string, price:string, curren
     }
     
     async function handlePayment() {
-        // kan lägga if(loggedInUser) här{
             const response = await fetch("/api/create-checkout-session",{
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
@@ -119,9 +117,6 @@ function addToCart (id: string, name: string, image:string, price:string, curren
                     return;
             }
             const { url } = await response.json();window.location = url;
-        // } else {
-        //     console.log("you are not logged in");
-        // }
     }
 
  return (
