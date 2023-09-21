@@ -5,7 +5,7 @@ const fs = require ("fs");
 const path = require ("path");
 const filePath = path.join("db", "customers.json");
 
-//REGISTER
+//Register
 async function registerCustomer(req, res) {
   try {
     const { username, password, email } = req.body;
@@ -19,7 +19,7 @@ async function registerCustomer(req, res) {
       console.log(err);
     }
 
-    // Kolla om kunden redan finns
+    // Check if customer alreadt exist
     const existingCustomer = customersArray.find(
       (customer) => customer.username === username || customer.email === email
     );
@@ -28,16 +28,16 @@ async function registerCustomer(req, res) {
       return res.status(400).json({ message: "Customer already exists" });
     }
 
-    // Hasha lösenordet
+    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-   // Registrera användaren i Stripe 
+   // Register customer in Stripe
    const customer = await stripe.customers.create({
     name: username,
     email: email,
   });
 
-    // Skapa en ny kund
+    // Create new customer
     const newCustomer = {
       id: customer.id,
       username,
@@ -45,10 +45,10 @@ async function registerCustomer(req, res) {
       email: customer.email
     };
 
-    // Lägg till den nya kunden i arrayen
+    // Push new customer to the array
     customersArray.push(newCustomer);
 
-    // Skriv uppdaterad lista av kunder till JSON-filen
+    //JSON
     fs.writeFileSync(filePath, JSON.stringify(customersArray, null, 2));
 
     res.json({ message: "Customer registered successfully", user: newCustomer, customer });
@@ -69,7 +69,7 @@ async function getAllCustomers(req, res) {
   }
 }
 
-//LOGIN
+//Login
 async function logIn(req, res) {
   const { username, password } = req.body;
 
@@ -91,7 +91,7 @@ async function logIn(req, res) {
       // delete
       delete customer.password;
 
-    // Set session COOKIES - hur ska man sätta cookies? Sätts i .rest men inte i konsoll
+    // Set session COOKIES 
     req.session = customer;
     console.log('User logged in cookies:', customer); 
     res.status(200).json({Message: "Successfully logged in", customer: {username: customer.username}});;
@@ -104,10 +104,10 @@ async function logIn(req, res) {
   }
 }
 
-// LOGOUT
+// Logout
 async function logOut(req, res) {
   try {
-    // Ta bort användarens session
+    // Deleate customer-session
     req.session = null;
     res.status(200).json("Customer logged out successfully" );
   } catch (error) {
@@ -115,7 +115,7 @@ async function logOut(req, res) {
   }
 }
 
-// AUTHORIZE
+// Authorize 
 async function authorize(req, res, next) {
   const { customer } = req; 
 

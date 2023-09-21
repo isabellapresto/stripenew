@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import Modal from '@mui/material/Modal';
 import './Register.css';
 
@@ -102,7 +101,6 @@ const Register = () => {
             </div>
           </form>
           <div>
-            {/* <Link to="/login">Log in to Shop</Link> */}
           </div>
         </div>
       </Modal>
