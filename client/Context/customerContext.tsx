@@ -3,9 +3,8 @@ import React, {
  useState,
  PropsWithChildren,
  useContext,
- useEffect,
+//  useEffect,
 } from "react";
-
 
 export interface Customer {
  id: string;
@@ -25,7 +24,6 @@ export interface RegisteredCustomer {
  password: string;
 }
 
-
 export interface CustomerContext {
  username: string;
  setUsername: React.Dispatch<React.SetStateAction<string>>;
@@ -33,7 +31,7 @@ export interface CustomerContext {
  setEmail: React.Dispatch<React.SetStateAction<string>>;
  password: string;
  setPassword: React.Dispatch<React.SetStateAction<string>>;
- authorization: () => void;
+//  authorization: () => void;
  registerCustomer: (newCustomer: NewCustomer) => Promise<void>;
  login: (registeredCustomer: RegisteredCustomer) => void;
  logout: () => void;
@@ -48,7 +46,7 @@ const defaultValues: CustomerContext = {
  setEmail: () => {},
  password: "",
  setPassword: () => {},
- authorization: () => {},
+//  authorization: () => {},
  registerCustomer: async () => {},
  login: async () => {},
  logout: () => {},
@@ -67,21 +65,21 @@ const CustomerProvider = ({ children }: PropsWithChildren<{}>) => { //object
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
 
- const authorization = async () => {
-   try {
-     const response = await fetch("/api/customers/authorize");
-     const data = await response.json();
-     if (response.status === 200 || response.status === 304) {
-       setloggedInCustomer(data);
-     }
-   } catch (err) {
-     console.log(err);
-   }
- };
+//  const authorization = async () => {
+//    try {
+//      const response = await fetch("/api/customers/authorize");
+//      const data = await response.json();
+//      if (response.status === 200 || response.status === 304) {
+//        setloggedInCustomer(data);
+//      }
+//    } catch (err) {
+//      console.log(err);
+//    }
+//  };
 
- useEffect(() => {
-   authorization();
- }, []);
+//  useEffect(() => {
+//    authorization();
+//  }, []);
 
  // Function to register a new user
  const registerCustomer = async (newCustomer: NewCustomer) => {
@@ -155,7 +153,7 @@ const CustomerProvider = ({ children }: PropsWithChildren<{}>) => { //object
        setEmail,
        password,
        setPassword,
-       authorization,
+      //  authorization,
        registerCustomer, 
        login,
        logout, 

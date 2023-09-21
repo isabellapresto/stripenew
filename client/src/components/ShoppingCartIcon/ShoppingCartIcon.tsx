@@ -13,7 +13,6 @@ const handleClose = () => {
 setOpen(false);
 };
 
-
 return (
 <button className='cart' onClick={open ? handleClose : handleOpen} >
 <ShoppingCart className="shopping-cart-icon" />

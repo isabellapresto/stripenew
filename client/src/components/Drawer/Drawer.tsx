@@ -39,7 +39,7 @@ return (
         </li>
       ))}
     </ul>
-      {/*knappen visas endast om användaren är inloggad */}
+      {/*button only appears if the user is logged in */}
       {loggedInCustomer ? (
         <button onClick={handlePayment}>Go to Checkout</button>
       ) : null}

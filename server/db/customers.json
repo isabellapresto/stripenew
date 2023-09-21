@@ -94,5 +94,17 @@
     "username": "Canuto",
     "password": "$2b$10$Aa/U1kDi3CDm0j/Gyh3F7unwDIbbt.SpjE4.k0PDlIZIFpnvTWu1K",
     "email": "canuto@hh.com"
+  },
+  {
+    "id": "cus_Og5Jmo2xKDzznx",
+    "username": "Hanna1",
+    "password": "$2b$10$Wdi2sI9AuNPmPv95ek4ECeairipqJA4jYtUmOOwUmFVimp54ySAm.",
+    "email": "hanna1@test.com"
+  },
+  {
+    "id": "cus_Og5ioHCzygxZtw",
+    "username": "Carlos",
+    "password": "$2b$10$B.wzpu9U41HUfQu4KR2nOePeII3O4oWbOCOIV7e5OhAQ/hvKK28UC",
+    "email": "carlos@carlos.com"
   }
 ]
